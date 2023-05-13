@@ -1,3 +1,7 @@
+# 557. Reverse String III
+## Problem Statement
+Given a string `s`, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+## Solution
 This is a C++ implementation of a function named `reverseWords` that takes a string as input and returns a new string with the words in reverse order. Here is a line-by-line explanation of the code:
 
 ```c++
