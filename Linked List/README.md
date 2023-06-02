@@ -94,3 +94,51 @@ To run the solution, instantiate the `Solution` class, create a linked list, and
 The time complexity of the solution is O(n), where n is the number of nodes in the linked list. The algorithm visits each node at most twice, once for cycle detection and once for finding the cycle start node.
 
 The space complexity is O(1) as the solution uses a constant amount of extra space regardless of the input size.
+Certainly! Here's an example of a README.md file for the "Remove Duplicates from Sorted List" problem:
+
+# 83.Remove Duplicates from Sorted List
+
+This is a solution to the "Remove Duplicates from Sorted List" problem. Given the head of a sorted linked list, the task is to delete all duplicates such that each element appears only once. The solution returns the updated linked list with duplicates removed and sorted.
+
+### Example
+
+Input:
+```
+[1, 1, 2]
+```
+Output:
+```
+[1, 2]
+```
+
+### Approach
+
+To solve this problem, the following approach is used:
+
+1. Check if the head is null or the next node is null. If true, return the head as it is.
+2. Create a pointer named "current" and set it to the head of the list.
+3. Iterate through the list while the current node and its next node are not null.
+4. Check if the value of the current node is equal to the value of its next node.
+   - If true, set the next node of the current node to the next node of its next node, effectively skipping the duplicate node.
+   - If false, move the current node to its next node.
+5. After the loop ends, return the head of the updated list.
+
+The solution is implemented in C++.
+
+### Implementation
+
+The solution is implemented in C++ and the code can be found in the `solution.cpp` file.
+
+To use the solution, instantiate a `Solution` object and call the `deleteDuplicates` method, passing the head of the sorted linked list as the parameter. The method will return the head of the updated list with duplicates removed.
+
+```cpp
+ListNode* deleteDuplicates(ListNode* head) {
+    // Implementation
+}
+```
+
+### Complexity Analysis
+
+The solution has a time complexity of O(n), where n is the number of nodes in the linked list. This is because we iterate through the list once to remove the duplicates. The space complexity is O(1) as we use a constant amount of extra space.
+
+Feel free to use this solution in your projects or as a reference for implementing your own solution to the problem.
