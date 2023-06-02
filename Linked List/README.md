@@ -94,7 +94,3 @@ To run the solution, instantiate the `Solution` class, create a linked list, and
 The time complexity of the solution is O(n), where n is the number of nodes in the linked list. The algorithm visits each node at most twice, once for cycle detection and once for finding the cycle start node.
 
 The space complexity is O(1) as the solution uses a constant amount of extra space regardless of the input size.
-
-## Summary
-
-The problem requires detecting the presence of a cycle in a linked list and finding the node where the cycle begins. The solution uses Floyd's Cycle-Finding Algorithm to achieve this. It involves two pointers moving through the linked list at different speeds and detects the cycle by checking if the two pointers meet. Once a cycle is detected, the solution finds the cycle start node by moving both pointers at the same speed
