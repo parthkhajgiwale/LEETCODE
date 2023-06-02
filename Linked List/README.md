@@ -48,3 +48,53 @@ The time complexity of the algorithm is O(n), where n is the number of nodes in 
 
 The space complexity of the algorithm is O(1). It only requires a constant amount of additional space to store the two pointers.
 
+# 142. Linked List Cycle II
+
+This is a problem in which we need to detect if there is a cycle in a linked list and find the node where the cycle begins.
+
+## Problem Description
+
+Given the head of a linked list, the task is to return the node where the cycle begins. If there is no cycle, the function should return `null`.
+
+A cycle in a linked list occurs when there is a node in the list that can be reached again by continuously following the next pointer. The `pos` variable is used to denote the index of the node that the tail's next pointer is connected to (0-indexed). It is set to -1 if there is no cycle. Note that the `pos` value is not passed as a parameter.
+
+## Example
+
+Input: head = [3,2,0,-4], pos = 1
+
+Output: tail connects to node index 1
+
+Explanation: There is a cycle in the linked list, where the tail connects to the second node.
+
+## Approach
+
+To detect the cycle in the linked list and find the node where the cycle begins, we can use Floyd's Cycle-Finding Algorithm, also known as the "Tortoise and Hare Algorithm." The algorithm involves two pointers moving through the linked list at different speeds. If there is a cycle, the two pointers will eventually meet at the same node.
+
+The algorithm can be implemented using the following steps:
+
+1. Check if the list is empty or has only one node. If so, return `null`.
+2. Initialize two pointers, `slow` and `fast`, both pointing to the head of the linked list.
+3. Move the `slow` pointer by 1 step and the `fast` pointer by 2 steps in each iteration.
+4. If the pointers meet (`slow == fast`), there is a cycle. Set a flag to indicate the presence of a cycle.
+5. Reset the `slow` pointer to the head of the linked list.
+6. Move both pointers at the same speed (1 step) until they meet again.
+7. The meeting point will be the node where the cycle begins. Return this node.
+8. If there is no cycle (the pointers never meet), return `null`.
+
+## Implementation
+
+The solution is implemented in C++ and provided in the `Solution` class. The `detectCycle` function takes the head of the linked list as input and returns the node where the cycle begins or `null`.
+
+The solution follows the steps mentioned in the approach section. It uses two pointers, `slow` and `fast`, to detect the cycle and find the cycle start node.
+
+To run the solution, instantiate the `Solution` class, create a linked list, and call the `detectCycle` function, passing the head of the linked list as an argument.
+
+## Complexity Analysis
+
+The time complexity of the solution is O(n), where n is the number of nodes in the linked list. The algorithm visits each node at most twice, once for cycle detection and once for finding the cycle start node.
+
+The space complexity is O(1) as the solution uses a constant amount of extra space regardless of the input size.
+
+## Summary
+
+The problem requires detecting the presence of a cycle in a linked list and finding the node where the cycle begins. The solution uses Floyd's Cycle-Finding Algorithm to achieve this. It involves two pointers moving through the linked list at different speeds and detects the cycle by checking if the two pointers meet. Once a cycle is detected, the solution finds the cycle start node by moving both pointers at the same speed
