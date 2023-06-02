@@ -187,5 +187,63 @@ The time complexity of this solution is O(n), where n is the number of nodes in 
 The "Remove Duplicates from Sorted List II" problem is solved by iterating through the linked list and skipping the nodes that have duplicate numbers. The solution maintains a `prev` and `current` pointer to handle the removal of duplicate nodes. The resulting linked list is returned and is sorted as well.
 
 This problem can be solved using a simple and efficient algorithm, with a time complexity of O(n) and a space complexity of O(1).
+Sure! Here's a sample `README.md` file explaining the problem and providing the solution code:
 
+# 2. Add Two Numbers - Linked List
+
+This problem involves adding two numbers represented by linked lists. The digits of each number are stored in reverse order, with each node of the linked list containing a single digit. The task is to add the two numbers and return the sum as a linked list.
+
+## Example
+
+Input:
+```
+l1 = [2,4,3]
+l2 = [5,6,4]
+```
+
+Output:
+```
+[7,0,8]
+```
+
+Explanation: 342 + 465 = 807.
+
+## Solution
+
+The solution involves iterating over the linked lists simultaneously, adding the corresponding digits and keeping track of any carry. The `addTwoNumbers` function in the provided code implements this logic.
+
+The steps of the solution are as follows:
+
+1. Create a dummy node to track the result.
+2. Initialize a current pointer to the dummy node.
+3. Initialize a carry variable to 0.
+4. Iterate over the linked lists while l1 or l2 or carry is non-zero.
+   - Calculate the sum by adding the carry and the values of l1 and l2 nodes. If either list reaches its end, consider its value as 0.
+   - Update the carry by dividing the sum by 10.
+   - Create a new node with the value equal to the sum modulo 10 (the digit at the current position).
+   - Move the current pointer to the next node.
+   - Update l1 and l2 pointers to their next nodes if they are not at the end.
+5. Return the next node of the dummy node, which represents the actual result.
+
+To use the provided code, create a `ListNode` struct that represents a node in the linked list. The struct should have an `int` value and a `next` pointer to the next node. The code also requires the input linked lists `l1` and `l2` to be non-empty.
+
+```cpp
+struct ListNode {
+    int val;
+    ListNode* next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
+
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    // Implementation of the addTwoNumbers function
+    // ...
+    // ...
+}
+```
+
+You can then call the `addTwoNumbers` function with your desired inputs to get the result.
+
+Feel free to use this solution code as a starting point for your implementation. Good luck!
 
