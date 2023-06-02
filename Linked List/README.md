@@ -141,4 +141,51 @@ ListNode* deleteDuplicates(ListNode* head) {
 
 The solution has a time complexity of O(n), where n is the number of nodes in the linked list. This is because we iterate through the list once to remove the duplicates. The space complexity is O(1) as we use a constant amount of extra space.
 
-Feel free to use this solution in your projects or as a reference for implementing your own solution to the problem.
+Certainly! Here's a README.md file for the "Remove Duplicates from Sorted List II" problem:
+
+# 82.Remove Duplicates from Sorted List II
+
+This is a solution for the "Remove Duplicates from Sorted List II" problem. Given a sorted linked list, the task is to delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. The resulting linked list should also be sorted.
+
+## Problem Statement
+
+Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. Return the linked list sorted as well.
+
+## Example
+
+Input:
+```
+[1, 2, 3, 3, 4, 4, 5]
+```
+
+Output:
+```
+[1, 2, 5]
+```
+
+## Approach
+
+To solve this problem, we can use two pointers, `prev` and `current`, to traverse the linked list. We iterate through the list and keep track of the nodes that have duplicate numbers. If a duplicate is found, we skip all the duplicate nodes. If no duplicates are found, we move the `prev` and `current` pointers forward.
+
+To handle the case of duplicates at the beginning of the list, we create a dummy node that points to the head of the list. This simplifies the code by avoiding special cases.
+
+The algorithm can be summarized as follows:
+
+1. Initialize a dummy node that points to the head of the list.
+2. Initialize `prev` and `current` pointers to the dummy node.
+3. Iterate through the list while `current` is not null:
+   - If `current` and `current->next` have different values, move `prev` and `current` pointers forward.
+   - If `current` and `current->next` have the same value, skip all the duplicate nodes by updating the `prev->next` pointer.
+4. Return the `dummy.next` pointer, which points to the head of the resulting list.
+
+## Complexity Analysis
+
+The time complexity of this solution is O(n), where n is the number of nodes in the linked list. We iterate through the list once. The space complexity is O(1) as we only use a constant amount of additional space.
+
+## Summary
+
+The "Remove Duplicates from Sorted List II" problem is solved by iterating through the linked list and skipping the nodes that have duplicate numbers. The solution maintains a `prev` and `current` pointer to handle the removal of duplicate nodes. The resulting linked list is returned and is sorted as well.
+
+This problem can be solved using a simple and efficient algorithm, with a time complexity of O(n) and a space complexity of O(1).
+
+
